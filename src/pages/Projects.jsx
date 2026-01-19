@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 
 const Projects = () => {
@@ -99,17 +100,22 @@ const Projects = () => {
               style={{animationDelay: `${index * 0.1}s`}}
             >
               <div className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-                <div className="relative z-10 text-center text-white">
-                  <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse-custom">
-                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h12a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm2 2a1 1 0 000 2h.01a1 1 0 100-2H5zm3 0a1 1 0 000 2h3a1 1 0 100-2H8z" clipRule="evenodd" />
-                    </svg>
+                <img 
+                  src={`https://picsum.photos/400/300?random=${project.id}`}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-black/40"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white z-10">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h12a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm2 2a1 1 0 000 2h.01a1 1 0 100-2H5zm3 0a1 1 0 000 2h3a1 1 0 100-2H8z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium">Live Project</span>
                   </div>
-                  <span className="text-lg font-semibold">Project Preview</span>
                 </div>
-                <div className="absolute -top-10 -right-10 w-20 h-20 bg-white bg-opacity-10 rounded-full animate-float"></div>
-                <div className="absolute -bottom-10 -left-10 w-16 h-16 bg-white bg-opacity-10 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
               </div>
               
               <div className="p-8">
@@ -129,9 +135,12 @@ const Projects = () => {
                 </div>
                 
                 <div className="flex space-x-3">
-                  <button className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-4 rounded-xl font-medium hover-scale transition-all duration-300">
+                  <Link 
+                    to={`/project/${project.id}`}
+                    className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-4 rounded-xl font-medium hover-scale transition-all duration-300 text-center"
+                  >
                     View Details
-                  </button>
+                  </Link>
                   <button className="border-2 border-gray-200 text-gray-700 py-3 px-4 rounded-xl font-medium hover:border-blue-300 hover:text-blue-600 transition-all duration-300">
                     Live Demo
                   </button>
