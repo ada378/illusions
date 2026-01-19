@@ -52,6 +52,16 @@ const Navbar = () => {
                 Projects
               </Link>
               <Link
+                to="/team"
+                className={`px-3 lg:px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover-scale ${
+                  isActive('/team') 
+                    ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                }`}
+              >
+                Team
+              </Link>
+              <Link
                 to="/contact"
                 className={`px-3 lg:px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover-scale ${
                   isActive('/contact') 
@@ -111,6 +121,15 @@ const Navbar = () => {
                 }`}
               >
                 Projects
+              </Link>
+              <Link
+                to="/team"
+                onClick={() => setIsMenuOpen(false)}
+                className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                  isActive('/team') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                }`}
+              >
+                Team
               </Link>
               <Link
                 to="/contact"
