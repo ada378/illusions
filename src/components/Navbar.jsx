@@ -9,67 +9,83 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full top-0 z-[9999] border-b border-gray-200">
+    <nav className="bg-white/80 backdrop-blur-md shadow-lg fixed w-full top-0 z-[9999] border-b border-white/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           <div className="flex items-center animate-fadeInLeft">
-            <Link to="/" className="flex items-center space-x-2 sm:space-x-3 hover-scale">
-              <img src={logo} alt="Illusion Logo" className="h-10 w-10 sm:h-14 sm:w-14 rounded-full object-cover shadow-lg border-2 border-blue-100" />
-              <span className="text-lg sm:text-2xl font-bold gradient-text">Illusion</span>
+            <Link to="/" className="flex items-center space-x-3 hover-scale group">
+              <div className="relative">
+                <img src={logo} alt="Illusion Logo" className="h-12 w-12 sm:h-16 sm:w-16 rounded-full object-cover shadow-xl border-2 border-white group-hover:border-blue-200 transition-all duration-300" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div>
+                <span className="text-xl sm:text-2xl font-bold gradient-text">Illusion</span>
+                <div className="text-xs text-gray-500 font-medium">Digital Solutions</div>
+              </div>
             </Link>
           </div>
           
           <div className="hidden md:block animate-fadeInRight">
-            <div className="ml-6 lg:ml-10 flex items-baseline space-x-4 lg:space-x-8">
+            <div className="ml-6 lg:ml-10 flex items-center space-x-1 lg:space-x-2 bg-gray-50/50 rounded-full p-2 backdrop-blur-sm">
               <Link
                 to="/"
-                className={`px-3 lg:px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover-scale ${
+                className={`px-4 lg:px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover-scale relative overflow-hidden ${
                   isActive('/') 
-                    ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg' 
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/25' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-white/70'
                 }`}
               >
-                Home
+                <span className="relative z-10">Home</span>
               </Link>
               <Link
                 to="/about"
-                className={`px-3 lg:px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover-scale ${
+                className={`px-4 lg:px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover-scale relative overflow-hidden ${
                   isActive('/about') 
-                    ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg' 
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/25' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-white/70'
                 }`}
               >
-                About
+                <span className="relative z-10">About</span>
+              </Link>
+              <Link
+                to="/services"
+                className={`px-4 lg:px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover-scale relative overflow-hidden ${
+                  isActive('/services') 
+                    ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/25' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-white/70'
+                }`}
+              >
+                <span className="relative z-10">Services</span>
               </Link>
               <Link
                 to="/projects"
-                className={`px-3 lg:px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover-scale ${
+                className={`px-4 lg:px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover-scale relative overflow-hidden ${
                   isActive('/projects') 
-                    ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg' 
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/25' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-white/70'
                 }`}
               >
-                Projects
+                <span className="relative z-10">Projects</span>
               </Link>
               <Link
                 to="/team"
-                className={`px-3 lg:px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover-scale ${
+                className={`px-4 lg:px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover-scale relative overflow-hidden ${
                   isActive('/team') 
-                    ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg' 
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/25' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-white/70'
                 }`}
               >
-                Team
+                <span className="relative z-10">Team</span>
               </Link>
               <Link
                 to="/contact"
-                className={`px-3 lg:px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover-scale ${
+                className={`px-4 lg:px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover-scale relative overflow-hidden ${
                   isActive('/contact') 
-                    ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg' 
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/25' 
+                    : 'text-white bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 shadow-lg shadow-orange-500/25'
                 }`}
               >
-                Contact
+                <span className="relative z-10">Contact</span>
               </Link>
             </div>
           </div>
@@ -78,7 +94,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600 transition-colors"
+              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600 transition-colors p-2 rounded-lg hover:bg-gray-100/50"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isMenuOpen ? (
@@ -94,12 +110,12 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden animate-fadeInUp">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg shadow-lg mt-2 mx-2">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl mt-2 mx-2 border border-white/20">
               <Link
                 to="/"
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                  isActive('/') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all duration-300 ${
+                  isActive('/') ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
                 Home
@@ -107,17 +123,26 @@ const Navbar = () => {
               <Link
                 to="/about"
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                  isActive('/about') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all duration-300 ${
+                  isActive('/about') ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
                 About
               </Link>
               <Link
+                to="/services"
+                onClick={() => setIsMenuOpen(false)}
+                className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all duration-300 ${
+                  isActive('/services') ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                }`}
+              >
+                Services
+              </Link>
+              <Link
                 to="/projects"
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                  isActive('/projects') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all duration-300 ${
+                  isActive('/projects') ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
                 Projects
@@ -125,8 +150,8 @@ const Navbar = () => {
               <Link
                 to="/team"
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                  isActive('/team') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all duration-300 ${
+                  isActive('/team') ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
                 Team
@@ -134,8 +159,8 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                  isActive('/contact') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all duration-300 ${
+                  isActive('/contact') ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg' : 'text-white bg-gradient-to-r from-orange-500 to-red-500 shadow-lg'
                 }`}
               >
                 Contact
