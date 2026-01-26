@@ -15,11 +15,10 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="relative">
-                <img src={logo} alt="Illusion Logo" className="h-10 w-10 rounded-lg object-cover shadow-sm border border-gray-200 group-hover:border-blue-300 transition-all duration-300" />
+                <img src={logo} alt="Illusion Logo" className="h-12 w-12 rounded-lg object-cover shadow-md border border-gray-200 group-hover:border-blue-300 transition-all duration-300" />
               </div>
               <div>
-                <span className="text-xl font-bold text-gray-900">Illusion</span>
-                <div className="text-xs text-gray-500 font-medium">Digital Solutions</div>
+                <span className="text-2xl font-bold text-gray-900">Web Tech Illusion</span>
               </div>
             </Link>
           </div>
