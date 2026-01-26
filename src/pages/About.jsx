@@ -2,73 +2,56 @@ import Footer from '../components/Footer';
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 pt-20 relative overflow-hidden">
+    <div className="min-h-screen bg-slate-50 pt-20 relative overflow-hidden">
       {/* Epic Hero Section */}
       <section className="min-h-screen flex items-center relative">
         {/* Animated Background */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-cyan-400/30 to-blue-500/30 rounded-full filter blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-purple-400/30 to-pink-500/30 rounded-full filter blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-indigo-400/20 to-purple-500/20 rounded-full filter blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
-          
-          {/* Starfield Effect */}
-          {[...Array(50)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-white/60 rounded-full animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
-              }}
-            ></div>
-          ))}
+          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-100 rounded-full filter blur-3xl opacity-30"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-slate-100 rounded-full filter blur-3xl opacity-40"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gray-100 rounded-full filter blur-3xl opacity-20"></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           {/* Floating Badge */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center px-8 py-4 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8 animate-fadeInUp">
-              <span className="text-cyan-300 font-bold text-lg uppercase tracking-widest">🌟 Our Story & Vision 🌟</span>
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-50 border border-blue-200 mb-8 animate-fadeInUp">
+              <span className="text-blue-700 font-semibold text-sm uppercase tracking-wider">About Our Company</span>
             </div>
           </div>
           
           {/* Main Content */}
           <div className="text-center mb-20 animate-fadeInUp">
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white mb-8 leading-none">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
               About
-              <span className="block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
-                ILLUSION
+              <span className="block text-blue-600">
+                Illusion Digital
               </span>
             </h1>
             
-            <p className="text-2xl sm:text-3xl md:text-4xl text-cyan-100 max-w-6xl mx-auto leading-relaxed font-light mb-12">
-              🚀 We are passionate creators, developers, and innovators dedicated to 
-              <span className="font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"> transforming dreams into digital reality</span> ✨
+            <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
+              We are a team of passionate developers and designers dedicated to 
+              <span className="font-semibold text-blue-600"> transforming your digital vision into reality</span> through innovative solutions.
             </p>
             
-            {/* Epic Stats */}
-            <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
+            <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mb-16">
               <div className="text-center">
-                <div className="text-5xl md:text-6xl font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-bounce">5+</div>
-                <p className="text-cyan-200 font-semibold text-lg">Epic Years</p>
+                <div className="text-4xl font-bold text-blue-600">5+</div>
+                <p className="text-gray-600 font-medium">Years Experience</p>
               </div>
               <div className="text-center">
-                <div className="text-5xl md:text-6xl font-black bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent animate-bounce" style={{animationDelay: '0.5s'}}>500+</div>
-                <p className="text-purple-200 font-semibold text-lg">Magic Projects</p>
+                <div className="text-4xl font-bold text-blue-600">500+</div>
+                <p className="text-gray-600 font-medium">Projects Completed</p>
               </div>
               <div className="text-center">
-                <div className="text-5xl md:text-6xl font-black bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent animate-bounce" style={{animationDelay: '1s'}}>150+</div>
-                <p className="text-pink-200 font-semibold text-lg">Happy Clients</p>
+                <div className="text-4xl font-bold text-blue-600">150+</div>
+                <p className="text-gray-600 font-medium">Happy Clients</p>
               </div>
             </div>
             
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fadeInUp" style={{animationDelay: '0.6s'}}>
-              <button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-600 text-white px-16 py-6 rounded-full text-2xl font-black hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-cyan-500/50">
-                <span className="relative z-10 group-hover:animate-pulse">🎆 Discover Our Magic</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fadeInUp" style={{animationDelay: '0.6s'}}>
+              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
+                Learn More About Us
               </button>
             </div>
           </div>
@@ -83,95 +66,92 @@ const About = () => {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-        {/* Story Section - Updated for dark theme */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div className="animate-fadeInLeft">
-            <h2 className="text-5xl font-black text-white mb-8">
-              Our <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Epic Story</span>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Our <span className="text-blue-600">Story</span>
             </h2>
-            <p className="text-cyan-100 mb-6 text-xl leading-relaxed">
-              🎆 Founded with a vision to bridge the gap between imagination and reality, 
+            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
+              Founded with a vision to bridge the gap between imagination and reality, 
               Illusion has been at the forefront of digital innovation since our inception. 
               We believe that every great project starts with a dream, and our mission is 
               to make those dreams come true.
             </p>
-            <p className="text-purple-200 mb-8 text-xl leading-relaxed">
-              ✨ Our team combines years of experience in web development, design, and digital 
+            <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+              Our team combines years of experience in web development, design, and digital 
               strategy to deliver solutions that not only meet but exceed expectations. 
               We don't just build websites; we create digital experiences that leave lasting impressions.
             </p>
           </div>
           <div className="animate-fadeInRight">
             <div className="relative">
-              <div className="bg-gradient-to-br from-cyan-500 via-purple-600 to-pink-500 rounded-3xl h-96 flex items-center justify-center hover-scale transition-all duration-500 shadow-2xl hover:shadow-purple-500/50">
+              <div className="bg-blue-600 rounded-2xl h-80 flex items-center justify-center shadow-xl">
                 <div className="text-center text-white">
-                  <div className="text-5xl font-black mb-6 animate-pulse">🌟 Our Vision 🌟</div>
-                  <p className="text-2xl font-light opacity-90">Creating Digital Magic</p>
+                  <div className="text-4xl font-bold mb-4">Our Vision</div>
+                  <p className="text-xl opacity-90">Creating Digital Excellence</p>
                 </div>
               </div>
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full animate-float opacity-80"></div>
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-br from-pink-400 to-red-500 rounded-full animate-float opacity-80" style={{animationDelay: '1s'}}></div>
             </div>
           </div>
         </div>
 
-        {/* Values Section - Updated for dark theme */}
         <div className="mb-20">
-          <h2 className="text-5xl font-black text-white text-center mb-16 animate-fadeInUp">
-            Our <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Core Values</span>
+          <h2 className="text-4xl font-bold text-gray-900 text-center mb-12 animate-fadeInUp">
+            Our <span className="text-blue-600">Core Values</span>
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="backdrop-blur-xl bg-white/10 p-8 rounded-3xl border border-white/20 text-center hover:bg-white/20 hover:scale-105 transition-all duration-500 animate-fadeInUp">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse text-3xl">
-                🚀
+            <div className="bg-white p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow duration-300 animate-fadeInUp">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Innovation</h3>
-              <p className="text-cyan-200">Pushing boundaries with cutting-edge solutions and creative thinking</p>
+              <h3 className="text-xl font-bold mb-4 text-gray-900">Innovation</h3>
+              <p className="text-gray-600">Pushing boundaries with cutting-edge solutions and creative thinking</p>
             </div>
             
-            <div className="backdrop-blur-xl bg-white/10 p-8 rounded-3xl border border-white/20 text-center hover:bg-white/20 hover:scale-105 transition-all duration-500 animate-fadeInUp" style={{animationDelay: '0.1s'}}>
-              <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse text-3xl" style={{animationDelay: '0.5s'}}>
-                ✨
+            <div className="bg-white p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow duration-300 animate-fadeInUp" style={{animationDelay: '0.1s'}}>
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Quality</h3>
-              <p className="text-purple-200">Excellence in every detail and interaction we create</p>
+              <h3 className="text-xl font-bold mb-4 text-gray-900">Quality</h3>
+              <p className="text-gray-600">Excellence in every detail and interaction we create</p>
             </div>
             
-            <div className="backdrop-blur-xl bg-white/10 p-8 rounded-3xl border border-white/20 text-center hover:bg-white/20 hover:scale-105 transition-all duration-500 animate-fadeInUp" style={{animationDelay: '0.2s'}}>
-              <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse text-3xl" style={{animationDelay: '1s'}}>
-                🎨
+            <div className="bg-white p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow duration-300 animate-fadeInUp" style={{animationDelay: '0.2s'}}>
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+                </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Creativity</h3>
-              <p className="text-pink-200">Unique designs that stand out from the crowd</p>
+              <h3 className="text-xl font-bold mb-4 text-gray-900">Creativity</h3>
+              <p className="text-gray-600">Unique designs that stand out from the crowd</p>
             </div>
             
-            <div className="backdrop-blur-xl bg-white/10 p-8 rounded-3xl border border-white/20 text-center hover:bg-white/20 hover:scale-105 transition-all duration-500 animate-fadeInUp" style={{animationDelay: '0.3s'}}>
-              <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse text-3xl" style={{animationDelay: '1.5s'}}>
-                🔥
+            <div className="bg-white p-8 rounded-xl border border-gray-200 text-center hover:shadow-lg transition-shadow duration-300 animate-fadeInUp" style={{animationDelay: '0.3s'}}>
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Passion</h3>
-              <p className="text-orange-200">Building lasting relationships through dedication</p>
+              <h3 className="text-xl font-bold mb-4 text-gray-900">Passion</h3>
+              <p className="text-gray-600">Building lasting relationships through dedication</p>
             </div>
           </div>
         </div>
 
-        {/* Team Section - Updated for dark theme */}
-        <div className="text-center backdrop-blur-xl bg-white/10 rounded-3xl p-16 border border-white/20 animate-fadeInUp">
-          <h2 className="text-5xl font-black text-white mb-8">
-            Meet Our <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Dream Team</span>
+        <div className="text-center bg-white rounded-2xl p-12 border border-gray-200 shadow-lg animate-fadeInUp">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            Meet Our <span className="text-blue-600">Professional Team</span>
           </h2>
-          <p className="text-cyan-100 mb-12 max-w-4xl mx-auto text-xl leading-relaxed">
-            🎆 Our diverse team of experts brings together different perspectives and skills 
-            to create something truly magical for every project. ✨
+          <p className="text-gray-600 mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
+            Our diverse team of experts brings together different perspectives and skills 
+            to create exceptional solutions for every project.
           </p>
-          <div className="flex justify-center space-x-8 mb-12">
-            <div className="w-24 h-24 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-float flex items-center justify-center text-3xl">🚀</div>
-            <div className="w-24 h-24 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-float flex items-center justify-center text-3xl" style={{animationDelay: '0.5s'}}>🎨</div>
-            <div className="w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full animate-float flex items-center justify-center text-3xl" style={{animationDelay: '1s'}}>✨</div>
-            <div className="w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-float flex items-center justify-center text-3xl" style={{animationDelay: '1.5s'}}>🔥</div>
-          </div>
-          <button className="bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-600 text-white px-16 py-6 rounded-full font-black text-2xl hover-scale hover-shadow transition-all duration-500 shadow-2xl">
-            🌟 Join Our Epic Team
+          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
+            View Our Team
           </button>
         </div>
       </div>

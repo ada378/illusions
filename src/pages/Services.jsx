@@ -84,75 +84,47 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-slate-50">
       {/* Epic Hero Section */}
-      <section className="pt-20 sm:pt-28 pb-20 sm:pb-32 relative overflow-hidden min-h-screen flex items-center">
-        {/* Animated Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{animationDelay: '4s'}}></div>
-          
-          {/* Floating Particles */}
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-white/40 rounded-full animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 2}s`
-              }}
-            ></div>
-          ))}
+      <section className="pt-20 sm:pt-28 pb-16 sm:pb-20 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 right-20 w-80 h-80 bg-blue-100 rounded-full filter blur-3xl opacity-30"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-slate-100 rounded-full filter blur-3xl opacity-40"></div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
           <div className="text-center">
-            {/* Animated Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-white/20 mb-8 animate-fadeInUp">
-              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">🚀 Premium Digital Solutions</span>
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-50 border border-blue-200 mb-8 animate-fadeInUp">
+              <span className="text-blue-700 font-semibold text-sm uppercase tracking-wider">Our Services</span>
             </div>
             
-            {/* Main Heading */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-8 animate-fadeInUp leading-none" style={{animationDelay: '0.2s'}}>
-              Our Epic
-              <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-pulse">
-                SERVICES
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-gray-900 mb-8 animate-fadeInUp leading-tight" style={{animationDelay: '0.2s'}}>
+              Professional
+              <span className="block text-blue-600">
+                Digital Services
               </span>
             </h1>
             
-            {/* Subtitle */}
-            <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 mb-12 max-w-5xl mx-auto animate-fadeInUp leading-relaxed font-light" style={{animationDelay: '0.4s'}}>
-              🌟 Transform your business with our comprehensive digital solutions that drive growth, 
-              <span className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> innovation, and success</span> 🎆
+            <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto animate-fadeInUp leading-relaxed" style={{animationDelay: '0.4s'}}>
+              Transform your business with our comprehensive digital solutions that drive growth, 
+              <span className="font-semibold text-blue-600"> innovation, and success</span>
             </p>
             
-            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fadeInUp" style={{animationDelay: '0.6s'}}>
-              <button className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-12 py-5 rounded-full text-xl font-bold hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-blue-500/50">
-                <span className="relative z-10 group-hover:animate-pulse">🚀 Explore Services</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
+                Explore Services
               </button>
               
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-8">
                 <div className="text-center">
-                  <div className="text-3xl font-black text-blue-600 animate-bounce">500+</div>
-                  <p className="text-gray-600 font-semibold">Projects</p>
+                  <div className="text-2xl font-bold text-blue-600">500+</div>
+                  <p className="text-gray-600 font-medium text-sm">Projects</p>
                 </div>
-                <div className="w-px h-12 bg-gray-300"></div>
+                <div className="w-px h-8 bg-gray-300"></div>
                 <div className="text-center">
-                  <div className="text-3xl font-black text-purple-600 animate-bounce" style={{animationDelay: '0.5s'}}>99%</div>
-                  <p className="text-gray-600 font-semibold">Success Rate</p>
+                  <div className="text-2xl font-bold text-blue-600">99%</div>
+                  <p className="text-gray-600 font-medium text-sm">Success Rate</p>
                 </div>
-              </div>
-            </div>
-            
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-              <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-                <div className="w-1 h-3 bg-gray-600 rounded-full mt-2 animate-pulse"></div>
               </div>
             </div>
           </div>
@@ -193,7 +165,7 @@ const Services = () => {
                     <span className="text-lg font-bold text-gray-900">{service.price}</span>
                     <Link 
                       to="/contact"
-                      className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover-scale transition-all duration-300"
+                      className="bg-gradient-to-r from-blue-500 to-teal-600 text-white px-6 py-2 rounded-full font-semibold hover-scale transition-all duration-300"
                     >
                       Get Quote
                     </Link>
@@ -219,7 +191,7 @@ const Services = () => {
             {process.map((step, index) => (
               <div key={index} className="text-center animate-fadeInUp" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="relative mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto shadow-lg">
+                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-teal-600 rounded-full flex items-center justify-center mx-auto shadow-lg">
                     <span className="text-2xl font-bold text-white">{step.step}</span>
                   </div>
                   {index < process.length - 1 && (
@@ -265,7 +237,7 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-teal-600 text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Start Your <span className="text-yellow-300">Project?</span>
@@ -281,7 +253,7 @@ const Services = () => {
               Get Started Today
             </Link>
             <a 
-              href="https://wa.me/918739002047?text=Hi%2C%20I%20want%20to%20discuss%20my%20project%20requirements"
+              href="https://wa.me/917380497919?text=Hi%2C%20I%20want%20to%20discuss%20my%20project%20requirements"
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300"

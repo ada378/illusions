@@ -1,15 +1,61 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 
 const Home = () => {
+  const [consultationForm, setConsultationForm] = useState({
+    name: '',
+    phone: ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleConsultationSubmit = async (e) => {
+    e.preventDefault();
+    if (!consultationForm.name || !consultationForm.phone) return;
+    
+    setLoading(true);
+    setMessage('');
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: consultationForm.name,
+          phone: consultationForm.phone,
+          email: '',
+          message: 'Free Consultation Request from Home Page'
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setMessage('✅ Thank you! We will contact you soon for your free consultation.');
+        setConsultationForm({ name: '', phone: '' });
+      } else {
+        setMessage('❌ ' + data.message);
+      }
+    } catch (error) {
+      setMessage('❌ Failed to submit. Please try again.');
+    }
+
+    setLoading(false);
+    
+    // Clear message after 5 seconds
+    setTimeout(() => setMessage(''), 5000);
+  };
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       {/* Hero Section */}
       <section className="pt-20 sm:pt-28 pb-16 sm:pb-24 relative overflow-hidden min-h-screen flex items-center">
         {/* Background Animation */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-60 h-60 sm:w-80 sm:h-80 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float"></div>
-          <div className="absolute -bottom-40 -left-40 w-60 h-60 sm:w-80 sm:h-80 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" style={{animationDelay: '2s'}}></div>
+          <div className="absolute -top-40 -right-40 w-60 h-60 sm:w-80 sm:h-80 bg-gradient-to-r from-blue-400 to-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float"></div>
+          <div className="absolute -bottom-40 -left-40 w-60 h-60 sm:w-80 sm:h-80 bg-gradient-to-r from-teal-400 to-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" style={{animationDelay: '2s'}}></div>
           <div className="absolute top-40 left-40 w-60 h-60 sm:w-80 sm:h-80 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" style={{animationDelay: '4s'}}></div>
         </div>
         
@@ -17,7 +63,7 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full text-sm font-semibold text-blue-700 mb-6 animate-fadeInUp">
+              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-teal-100 rounded-full text-sm font-semibold text-blue-700 mb-6 animate-fadeInUp">
                 <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
                 Available for New Projects
               </div>
@@ -31,7 +77,7 @@ const Home = () => {
                 engage users, and deliver exceptional results for your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start items-center animate-fadeInUp" style={{animationDelay: '0.4s'}}>
-                <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-full font-semibold text-base sm:text-lg hover-scale hover-shadow transition-all duration-300 shadow-xl">
+                <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-full font-semibold text-base sm:text-lg hover-scale hover-shadow transition-all duration-300 shadow-xl">
                   Start Your Project
                 </Link>
                 <Link to="/projects" className="w-full sm:w-auto border-2 border-gray-300 text-gray-700 px-8 sm:px-12 py-4 sm:py-5 rounded-full font-semibold text-base sm:text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg">
@@ -62,7 +108,7 @@ const Home = () => {
                 <div className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
                   <div className="space-y-6">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-teal-600 rounded-xl flex items-center justify-center">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
@@ -97,8 +143,8 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-72 h-72 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+              <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-teal-400/20 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-72 h-72 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-full blur-3xl"></div>
             </div>
           </div>
         </div>
@@ -110,20 +156,29 @@ const Home = () => {
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-8 sm:p-12 border border-white/20">
             <div className="text-center mb-10">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Get Your Free <span className="gradient-text">Session Audit</span>
+                Get Your Free <span className="gradient-text">Consultation</span>
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Discover how we can transform your digital presence. Get a personalized consultation with our experts.
               </p>
             </div>
             
-            <form className="space-y-6">
+            {message && (
+              <div className={`mb-6 p-4 rounded-lg text-center ${message.includes('✅') ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
+                {message}
+              </div>
+            )}
+            
+            <form onSubmit={handleConsultationSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
                   <input 
                     type="text" 
+                    value={consultationForm.name}
+                    onChange={(e) => setConsultationForm({...consultationForm, name: e.target.value})}
                     placeholder="Enter your full name"
+                    required
                     className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors text-gray-900 placeholder-gray-500"
                   />
                 </div>
@@ -131,7 +186,10 @@ const Home = () => {
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Mobile Number</label>
                   <input 
                     type="tel" 
-                    placeholder="+91 8739002047"
+                    value={consultationForm.phone}
+                    onChange={(e) => setConsultationForm({...consultationForm, phone: e.target.value})}
+                    placeholder="+91 7380497919"
+                    required
                     className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors text-gray-900 placeholder-gray-500"
                   />
                 </div>
@@ -140,12 +198,13 @@ const Home = () => {
               <div className="text-center">
                 <button 
                   type="submit"
-                  className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-600 text-white px-12 py-4 rounded-xl font-semibold text-lg hover-scale hover-shadow transition-all duration-300 shadow-lg mr-4"
+                  disabled={loading}
+                  className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-teal-600 text-white px-12 py-4 rounded-xl font-semibold text-lg hover-scale hover-shadow transition-all duration-300 shadow-lg mr-4 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Get Free Audit
+                  {loading ? 'Submitting...' : 'Get Free Consultation'}
                 </button>
                 <a 
-                  href="tel:+918739002047"
+                  href="tel:+917380497919"
                   className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover-scale hover-shadow transition-all duration-300 shadow-lg inline-flex items-center justify-center mt-4 sm:mt-0"
                 >
                   <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -160,7 +219,7 @@ const Home = () => {
               <div className="text-center">
                 <p className="text-gray-600 mb-4 font-medium">Need immediate assistance? Contact us directly:</p>
                 <a 
-                  href="https://wa.me/918739002047?text=Hi%2C%20I%20want%20a%20free%20session%20audit%20for%20my%20website" 
+                  href="https://wa.me/917380497919?text=Hi%2C%20I%20want%20a%20free%20consultation%20for%20my%20website" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center bg-green-500 text-white px-8 py-3 rounded-xl font-semibold hover:bg-green-600 transition-colors duration-300 shadow-lg hover-scale"
@@ -168,7 +227,7 @@ const Home = () => {
                   <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
                   </svg>
-                  WhatsApp: +91 8739002047
+                  WhatsApp: +91 7380497919
                 </a>
               </div>
             </div>
@@ -187,7 +246,7 @@ const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
             <div className="text-center p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl sm:rounded-3xl hover-shadow hover-scale animate-fadeInLeft shadow-lg sm:shadow-xl border border-blue-100">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 lg:mb-8 animate-pulse-custom shadow-lg">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-blue-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 lg:mb-8 animate-pulse-custom shadow-lg">
                 <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -196,8 +255,8 @@ const Home = () => {
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">Tailored websites and web applications built with React, Next.js, and modern technologies for optimal performance and scalability.</p>
             </div>
             
-            <div className="text-center p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl sm:rounded-3xl hover-shadow hover-scale animate-fadeInUp shadow-lg sm:shadow-xl border border-purple-100" style={{animationDelay: '0.2s'}}>
-              <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 lg:mb-8 animate-pulse-custom shadow-lg" style={{animationDelay: '1s'}}>
+            <div className="text-center p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-teal-50 to-cyan-100 rounded-2xl sm:rounded-3xl hover-shadow hover-scale animate-fadeInUp shadow-lg sm:shadow-xl border border-teal-100" style={{animationDelay: '0.2s'}}>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 lg:mb-8 animate-pulse-custom shadow-lg" style={{animationDelay: '1s'}}>
                 <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
@@ -264,7 +323,7 @@ const Home = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             <div className="text-center p-8 animate-fadeInUp bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-lg hover-shadow border border-blue-200">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -283,8 +342,8 @@ const Home = () => {
               <p className="text-gray-600 leading-relaxed">Rigorous testing, code reviews, and quality assurance processes ensuring enterprise-grade solutions</p>
             </div>
             
-            <div className="text-center p-8 animate-fadeInUp bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl shadow-lg hover-shadow border border-purple-200" style={{animationDelay: '0.2s'}}>
-              <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div className="text-center p-8 animate-fadeInUp bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl shadow-lg hover-shadow border border-teal-200" style={{animationDelay: '0.2s'}}>
+              <div className="w-20 h-20 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                 </svg>
@@ -307,7 +366,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 to-purple-600 text-white relative">
+      <section className="py-24 bg-gradient-to-r from-blue-600 to-teal-600 text-white relative">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 animate-fadeInUp">
@@ -376,7 +435,7 @@ const Home = () => {
                 </div>
                 <p className="text-gray-600 mb-6 leading-relaxed italic">"{testimonial.content}"</p>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-teal-600 rounded-full flex items-center justify-center mr-4">
                     <span className="text-white font-bold">{testimonial.name.charAt(0)}</span>
                   </div>
                   <div>
@@ -394,8 +453,8 @@ const Home = () => {
       <section className="py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
         {/* Background Animation */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-40 h-40 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-20 left-20 w-40 h-40 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{animationDelay: '2s'}}></div>
         </div>
         
         <div className="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
@@ -410,7 +469,7 @@ const Home = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fadeInUp" style={{animationDelay: '0.2s'}}>
-            <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-600 text-white px-12 py-5 rounded-full font-semibold text-lg hover-scale hover-shadow transition-all duration-300 shadow-xl inline-block text-center">
+            <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-teal-600 text-white px-12 py-5 rounded-full font-semibold text-lg hover-scale hover-shadow transition-all duration-300 shadow-xl inline-block text-center">
               Start Your Project
             </Link>
             <Link to="/projects" className="w-full sm:w-auto border-2 border-white text-white px-12 py-5 rounded-full font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 shadow-lg inline-block text-center">
@@ -427,7 +486,7 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className="font-semibold mb-2">Email Us</h3>
-              <p className="opacity-80">hello@illusion.com</p>
+              <p className="opacity-80">info@webtechillusion.com</p>
             </div>
             
             <div className="text-center">
@@ -437,7 +496,7 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className="font-semibold mb-2">Call Us</h3>
-              <p className="opacity-80">+91 8739002047</p>
+              <p className="opacity-80">+91 7380497919</p>
             </div>
             
             <div className="text-center">
@@ -448,7 +507,7 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className="font-semibold mb-2">Visit Us</h3>
-              <p className="opacity-80">123 Digital Street, Tech City</p>
+              <p className="opacity-80">VibhutiKhand GomtiNagar, Lucknow</p>
             </div>
           </div>
         </div>
