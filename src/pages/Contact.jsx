@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Footer from '../components/Footer';
+import NotificationService from '../services/NotificationService';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -52,6 +53,12 @@ const Contact = () => {
           phone: '',
           projectType: '',
           message: ''
+        });
+        
+        // Show success notification
+        NotificationService.showNotification('Message Sent!', {
+          body: 'Your message has been sent successfully. We\'ll get back to you soon!',
+          tag: 'contact-success'
         });
       } else {
         setError(data.message || 'Something went wrong');
