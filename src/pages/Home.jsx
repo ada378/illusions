@@ -32,7 +32,7 @@ const Home = () => {
     setMessage('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('http://localhost:8000/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,102 +69,159 @@ const Home = () => {
     setTimeout(() => setMessage(''), 5000);
   };
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-20 sm:pt-28 pb-16 sm:pb-24 relative overflow-hidden min-h-screen flex items-center">
-        {/* Background Animation */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-60 h-60 sm:w-80 sm:h-80 bg-gradient-to-r from-blue-400 to-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float"></div>
-          <div className="absolute -bottom-40 -left-40 w-60 h-60 sm:w-80 sm:h-80 bg-gradient-to-r from-teal-400 to-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-40 left-40 w-60 h-60 sm:w-80 sm:h-80 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" style={{animationDelay: '4s'}}></div>
+      <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black overflow-hidden">
+        {/* Geometric Background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <svg className="w-full h-full" viewBox="0 0 1200 800" fill="none">
+              <defs>
+                <linearGradient id="grid" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.3"/>
+                  <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.1"/>
+                </linearGradient>
+              </defs>
+              <pattern id="smallGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="url(#grid)" strokeWidth="1"/>
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#smallGrid)"/>
+            </svg>
+          </div>
+          <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
         </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="text-center lg:text-left">
-              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-teal-100 rounded-full text-sm font-semibold text-blue-700 mb-6 animate-fadeInUp">
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-                Available for New Projects
-              </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 animate-fadeInUp leading-tight">
-                Transform Your
-                <span className="block gradient-text animate-pulse-custom">Digital Vision</span>
-                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-gray-600 mt-2">Into Reality</span>
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto lg:mx-0 animate-fadeInUp leading-relaxed" style={{animationDelay: '0.2s'}}>
-                We create stunning, high-performance websites and applications that drive growth, 
-                engage users, and deliver exceptional results for your business.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start items-center animate-fadeInUp" style={{animationDelay: '0.4s'}}>
-                <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-full font-semibold text-base sm:text-lg hover-scale hover-shadow transition-all duration-300 shadow-xl">
-                  Start Your Project
-                </Link>
-                <Link to="/projects" className="w-full sm:w-auto border-2 border-gray-300 text-gray-700 px-8 sm:px-12 py-4 sm:py-5 rounded-full font-semibold text-base sm:text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg">
-                  View Our Work
-                </Link>
-              </div>
-              
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200 animate-fadeInUp" style={{animationDelay: '0.6s'}}>
-                <div className="text-center lg:text-left">
-                  <div className="text-2xl sm:text-3xl font-bold text-gray-900">500+</div>
-                  <div className="text-sm text-gray-600">Projects Delivered</div>
+
+        <div className="relative z-10 flex items-center min-h-screen">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              {/* Left Content */}
+              <div className="text-center lg:text-left order-2 lg:order-1">
+                <div className="inline-flex items-center px-3 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm border border-blue-500/30 rounded-full text-xs sm:text-sm font-medium text-blue-300 mb-6">
+                  <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+                  Available for Enterprise Projects
                 </div>
-                <div className="text-center lg:text-left">
-                  <div className="text-2xl sm:text-3xl font-bold text-gray-900">150+</div>
-                  <div className="text-sm text-gray-600">Happy Clients</div>
+                
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
+                  Enterprise-Grade
+                  <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
+                    Digital Solutions
+                  </span>
+                </h1>
+                
+                <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                  We architect and develop scalable web applications, mobile solutions, and digital platforms 
+                  that drive measurable business growth for global enterprises.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                  <Link 
+                    to="/contact" 
+                    className="group relative px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/25 text-center"
+                  >
+                    <span className="relative z-10">Start Your Project</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                  </Link>
+                  
+                  <Link 
+                    to="/projects" 
+                    className="px-6 py-3 sm:px-8 sm:py-4 border border-gray-600 text-gray-300 font-semibold rounded-lg hover:bg-gray-800 hover:border-gray-500 transition-all duration-300 text-center"
+                  >
+                    View Portfolio
+                  </Link>
                 </div>
-                <div className="text-center lg:text-left">
-                  <div className="text-2xl sm:text-3xl font-bold text-gray-900">99%</div>
-                  <div className="text-sm text-gray-600">Satisfaction Rate</div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Right Content - Visual Element */}
-            <div className="relative animate-fadeInRight">
-              <div className="relative z-10">
-                <div className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
-                  <div className="space-y-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-teal-600 rounded-xl flex items-center justify-center">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900">Web Development</h3>
-                        <p className="text-sm text-gray-600">Modern & Responsive</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900">Mobile Apps</h3>
-                        <p className="text-sm text-gray-600">iOS & Android</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900">UI/UX Design</h3>
-                        <p className="text-sm text-gray-600">User-Centered</p>
-                      </div>
-                    </div>
+                
+                {/* Trust Indicators */}
+                <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-6 border-t border-gray-800">
+                  <div className="text-center lg:text-left">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">500+</div>
+                    <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wide">Projects Delivered</div>
+                  </div>
+                  <div className="text-center lg:text-left">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">98%</div>
+                    <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wide">Client Retention</div>
+                  </div>
+                  <div className="text-center lg:text-left">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">24/7</div>
+                    <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wide">Support</div>
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-teal-400/20 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-72 h-72 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-full blur-3xl"></div>
+              
+              {/* Right Content - Modern Dashboard Preview */}
+              <div className="relative order-1 lg:order-2 mb-8 lg:mb-0">
+                <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl">
+                  {/* Mock Dashboard Header */}
+                  <div className="flex items-center justify-between mb-4 sm:mb-6">
+                    <div className="flex items-center space-x-2 sm:space-x-3">
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <div className="text-xs text-gray-400 font-mono hidden sm:block">dashboard.illusion.dev</div>
+                  </div>
+                  
+                  {/* Mock Dashboard Content */}
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-lg">
+                      <div className="flex items-center space-x-2 sm:space-x-3">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                          </svg>
+                        </div>
+                        <div>
+                          <div className="text-white font-semibold text-sm sm:text-base">Revenue Growth</div>
+                          <div className="text-gray-400 text-xs sm:text-sm">+127% this quarter</div>
+                        </div>
+                      </div>
+                      <div className="text-green-400 font-bold text-lg sm:text-xl">$2.4M</div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/20 rounded-lg">
+                      <div className="flex items-center space-x-2 sm:space-x-3">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                          </svg>
+                        </div>
+                        <div>
+                          <div className="text-white font-semibold text-sm sm:text-base">Active Users</div>
+                          <div className="text-gray-400 text-xs sm:text-sm">Real-time analytics</div>
+                        </div>
+                      </div>
+                      <div className="text-green-400 font-bold text-lg sm:text-xl">45.2K</div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-lg">
+                      <div className="flex items-center space-x-2 sm:space-x-3">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                          </svg>
+                        </div>
+                        <div>
+                          <div className="text-white font-semibold text-sm sm:text-base">Performance</div>
+                          <div className="text-gray-400 text-xs sm:text-sm">99.9% uptime</div>
+                        </div>
+                      </div>
+                      <div className="text-green-400 font-bold text-lg sm:text-xl">A+</div>
+                    </div>
+                  </div>
+                  
+                  {/* Floating Elements */}
+                  <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-12 h-12 sm:w-20 sm:h-20 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-xl animate-pulse"></div>
+                  <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-10 h-10 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
+                </div>
+                
+                {/* Floating Tech Icons */}
+                <div className="absolute -top-4 -left-4 sm:-top-8 sm:-left-8 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg animate-float">
+                  <span className="text-white font-bold text-lg sm:text-xl">R</span>
+                </div>
+                <div className="absolute -bottom-4 -right-4 sm:-bottom-8 sm:-right-8 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-xl flex items-center justify-center shadow-lg animate-float" style={{animationDelay: '1s'}}>
+                  <span className="text-white font-bold text-lg sm:text-xl">N</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -84,46 +84,57 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      {/* Epic Hero Section */}
-      <section className="pt-20 sm:pt-28 pb-16 sm:pb-20 relative overflow-hidden">
+    <div className="min-h-screen">
+      {/* Professional Hero Section */}
+      <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black overflow-hidden">
+        {/* Geometric Background */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-80 h-80 bg-blue-100 rounded-full filter blur-3xl opacity-30"></div>
-          <div className="absolute bottom-20 left-20 w-96 h-96 bg-slate-100 rounded-full filter blur-3xl opacity-40"></div>
+          <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <svg className="w-full h-full" viewBox="0 0 1200 800" fill="none">
+              <defs>
+                <linearGradient id="servicesGrid" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.3"/>
+                  <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.1"/>
+                </linearGradient>
+              </defs>
+              <pattern id="servicesSmallGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="url(#servicesGrid)" strokeWidth="1"/>
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#servicesSmallGrid)"/>
+            </svg>
+          </div>
+          <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
         </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
-          <div className="text-center">
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-50 border border-blue-200 mb-8 animate-fadeInUp">
-              <span className="text-blue-700 font-semibold text-sm uppercase tracking-wider">Our Services</span>
-            </div>
-            
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-gray-900 mb-8 animate-fadeInUp leading-tight" style={{animationDelay: '0.2s'}}>
-              Professional
-              <span className="block text-blue-600">
-                Digital Services
-              </span>
-            </h1>
-            
-            <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto animate-fadeInUp leading-relaxed" style={{animationDelay: '0.4s'}}>
-              Transform your business with our comprehensive digital solutions that drive growth, 
-              <span className="font-semibold text-blue-600"> innovation, and success</span>
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fadeInUp" style={{animationDelay: '0.6s'}}>
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
-                Explore Services
-              </button>
+
+        <div className="relative z-10 flex items-center min-h-screen">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+            <div className="text-center">
+              <div className="inline-flex items-center px-3 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm border border-blue-500/30 rounded-full text-xs sm:text-sm font-medium text-blue-300 mb-6">
+                <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+                Our Professional Services
+              </div>
               
-              <div className="flex items-center gap-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
+                Complete Digital
+                <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
+                  Solutions Suite
+                </span>
+              </h1>
+              
+              <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed px-2">
+                Transform your business with our comprehensive digital solutions that drive growth, 
+                innovation, and measurable success for enterprises worldwide.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-4 sm:gap-6 max-w-md mx-auto mb-8">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600">500+</div>
-                  <p className="text-gray-600 font-medium text-sm">Projects</p>
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">500+</div>
+                  <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wide">Projects Delivered</div>
                 </div>
-                <div className="w-px h-8 bg-gray-300"></div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600">99%</div>
-                  <p className="text-gray-600 font-medium text-sm">Success Rate</p>
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">99%</div>
+                  <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wide">Success Rate</div>
                 </div>
               </div>
             </div>
