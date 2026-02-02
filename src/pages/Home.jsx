@@ -93,7 +93,7 @@ const Home = () => {
         </div>
 
         <div className="relative z-10 flex items-center min-h-screen">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-20">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               {/* Left Content */}
               <div className="text-center lg:text-left order-2 lg:order-1">
@@ -149,7 +149,7 @@ const Home = () => {
               </div>
               
               {/* Right Content - Modern Dashboard Preview */}
-              <div className="relative order-1 lg:order-2 mb-8 lg:mb-0">
+              <div className="relative order-1 lg:order-2 mb-8 lg:mb-0 mt-20 sm:mt-24 lg:mt-0">
                 <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl">
                   {/* Mock Dashboard Header */}
                   <div className="flex items-center justify-between mb-4 sm:mb-6">
