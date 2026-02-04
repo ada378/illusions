@@ -15,7 +15,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="relative">
-                <img src={logo} alt="Illusion Logo" className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl object-cover shadow-md border-2 border-blue-100 group-hover:border-blue-300 transition-all duration-300" />
+                <img src={logo} alt="Illusion Logo" className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-full object-cover shadow-md border-2 border-blue-100 group-hover:border-blue-300 transition-all duration-300" />
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div>

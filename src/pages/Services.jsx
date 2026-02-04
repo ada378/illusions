@@ -6,56 +6,83 @@ const Services = () => {
   const services = [
     {
       id: 1,
-      title: "Web Development",
-      description: "Custom websites and web applications built with cutting-edge technologies for optimal performance and user experience.",
-      features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Cross-browser Compatible"],
-      icon: "🌐",
-      price: "Starting from ₹25,000",
+      title: "Static Website",
+      description: "Perfect for businesses needing a professional online presence with essential information and contact details.",
+      features: ["Responsive Design", "5-7 Pages", "Contact Forms", "SEO Optimized", "Fast Loading", "Mobile Friendly"],
+      icon: "📄",
+      price: "₹15,000 - ₹20,000",
       gradient: "from-blue-500 to-cyan-500"
     },
     {
       id: 2,
-      title: "E-Commerce Solutions",
-      description: "Complete online store development with secure payment gateways, inventory management, and analytics integration.",
-      features: ["Payment Gateway", "Inventory Management", "Order Tracking", "Analytics Dashboard"],
-      icon: "🛒",
-      price: "Starting from ₹45,000",
-      gradient: "from-purple-500 to-pink-500"
-    },
-    {
-      id: 3,
-      title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications for iOS and Android with seamless user experience.",
-      features: ["iOS & Android", "Cross-platform", "Push Notifications", "Offline Support"],
-      icon: "📱",
-      price: "Starting from ₹60,000",
+      title: "Dynamic Website",
+      description: "Interactive websites with content management systems and dynamic features for growing businesses.",
+      features: ["CMS Integration", "Database Connectivity", "User Authentication", "API Integration", "Admin Panel", "Content Management"],
+      icon: "⚙️",
+      price: "₹30,000 - ₹50,000",
       gradient: "from-green-500 to-teal-500"
     },
     {
+      id: 3,
+      title: "Fully Functional Website",
+      description: "Complete web applications with advanced features, e-commerce capabilities, and custom functionalities.",
+      features: ["E-commerce Integration", "Payment Gateway", "Advanced Analytics", "Custom Features", "Multi-user Support", "Third-party Integrations"],
+      icon: "🚀",
+      price: "₹1,00,000 - ₹2,00,000",
+      gradient: "from-purple-500 to-pink-500"
+    },
+    {
       id: 4,
-      title: "UI/UX Design",
-      description: "User-centered design solutions that enhance user experience and drive engagement through intuitive interfaces.",
-      features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
-      icon: "🎨",
-      price: "Starting from ₹20,000",
+      title: "E-Commerce Store",
+      description: "Complete online store with product catalog, shopping cart, payment gateway, and order management system.",
+      features: ["Product Catalog", "Shopping Cart", "Payment Gateway", "Order Management"],
+      icon: "🛒",
+      price: "Starting from ₹50,000",
       gradient: "from-orange-500 to-red-500"
     },
     {
       id: 5,
-      title: "Digital Marketing",
-      description: "Comprehensive digital marketing strategies to boost your online presence and drive targeted traffic.",
-      features: ["SEO Optimization", "Social Media", "Content Marketing", "PPC Campaigns"],
-      icon: "📈",
-      price: "Starting from ₹15,000/month",
-      gradient: "from-indigo-500 to-purple-500"
+      title: "Restaurant Website",
+      description: "Food ordering website with menu display, online ordering, table booking, and delivery management.",
+      features: ["Online Menu", "Food Ordering", "Table Booking", "Delivery Tracking"],
+      icon: "🍽️",
+      price: "Starting from ₹35,000",
+      gradient: "from-red-500 to-pink-500"
     },
     {
       id: 6,
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure and deployment solutions for enhanced performance and reliability.",
-      features: ["AWS/Azure Setup", "Auto Scaling", "Load Balancing", "24/7 Monitoring"],
-      icon: "☁️",
-      price: "Starting from ₹30,000",
+      title: "Real Estate Portal",
+      description: "Property listing website with search filters, property details, agent profiles, and inquiry management.",
+      features: ["Property Listings", "Advanced Search", "Agent Profiles", "Inquiry System"],
+      icon: "🏠",
+      price: "Starting from ₹60,000",
+      gradient: "from-indigo-500 to-purple-500"
+    },
+    {
+      id: 7,
+      title: "Educational Platform",
+      description: "Online learning platform with course management, student portal, assignments, and progress tracking.",
+      features: ["Course Management", "Student Portal", "Online Tests", "Progress Tracking"],
+      icon: "📚",
+      price: "Starting from ₹80,000",
+      gradient: "from-blue-600 to-indigo-600"
+    },
+    {
+      id: 8,
+      title: "Healthcare Website",
+      description: "Medical website with appointment booking, doctor profiles, patient portal, and telemedicine features.",
+      features: ["Appointment Booking", "Doctor Profiles", "Patient Portal", "Medical Records"],
+      icon: "🏥",
+      price: "Starting from ₹70,000",
+      gradient: "from-green-600 to-teal-600"
+    },
+    {
+      id: 9,
+      title: "Travel & Tourism",
+      description: "Travel booking website with package listings, hotel bookings, itinerary planning, and payment processing.",
+      features: ["Package Listings", "Hotel Booking", "Flight Integration", "Payment Gateway"],
+      icon: "✈️",
+      price: "Starting from ₹55,000",
       gradient: "from-cyan-500 to-blue-500"
     }
   ];
@@ -86,25 +113,13 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       {/* Professional Hero Section */}
-      <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black overflow-hidden">
-        {/* Geometric Background */}
+      <section className="relative min-h-screen bg-gradient-to-br from-slate-800 via-gray-800 to-slate-900 overflow-hidden">
+        {/* Professional Background Pattern */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10">
-            <svg className="w-full h-full" viewBox="0 0 1200 800" fill="none">
-              <defs>
-                <linearGradient id="servicesGrid" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.3"/>
-                  <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.1"/>
-                </linearGradient>
-              </defs>
-              <pattern id="servicesSmallGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="url(#servicesGrid)" strokeWidth="1"/>
-              </pattern>
-              <rect width="100%" height="100%" fill="url(#servicesSmallGrid)"/>
-            </svg>
-          </div>
-          <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 left-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(59,130,246,0.08),transparent_50%)] opacity-70"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_25%,rgba(6,182,212,0.04)_25%,rgba(6,182,212,0.04)_50%,transparent_50%,transparent_75%,rgba(6,182,212,0.04)_75%)] bg-[length:30px_30px]"></div>
+          <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-blue-500/6 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-cyan-500/6 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 flex items-center min-h-screen">
@@ -129,11 +144,11 @@ const Services = () => {
               
               <div className="grid grid-cols-2 gap-4 sm:gap-6 max-w-md mx-auto mb-8">
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">500+</div>
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">3+</div>
                   <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wide">Projects Delivered</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">99%</div>
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">100%</div>
                   <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wide">Success Rate</div>
                 </div>
               </div>

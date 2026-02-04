@@ -7,108 +7,108 @@ const ProjectDetail = () => {
   
   const projectsData = {
     1: {
-      title: "E-Commerce Platform",
-      subtitle: "Modern Online Shopping Experience",
-      description: "A comprehensive e-commerce platform built with cutting-edge technologies, featuring advanced product management, secure payment processing, and an intuitive user interface that drives conversions.",
-      longDescription: "This project represents a complete overhaul of traditional e-commerce experiences. We implemented advanced features including AI-powered product recommendations, real-time inventory management, multi-vendor support, and seamless mobile responsiveness. The platform handles thousands of concurrent users while maintaining optimal performance.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe", "AWS", "Redis"],
+      title: "Siddhart Tour and Travel",
+      subtitle: "Complete Travel Booking Platform",
+      description: "A comprehensive travel booking platform with tour packages, hotel reservations, and seamless payment integration for memorable travel experiences.",
+      longDescription: "Developed a complete travel booking platform for Siddhart Tour and Travel that revolutionizes how customers plan and book their trips. The platform features an intuitive interface for browsing tour packages, booking accommodations, and managing travel itineraries with integrated payment processing.",
+      tech: ["React", "Node.js", "MongoDB", "Stripe", "Google Maps API", "Razorpay"],
       category: "Web Development",
       gradient: "from-blue-500 to-purple-600",
-      client: "TechMart Solutions",
-      duration: "6 months",
-      team: "5 developers",
+      client: "Siddhart Tour and Travel",
+      duration: "3 months",
+      team: "3 developers",
       year: "2024",
       features: [
-        "Advanced Product Search & Filtering",
-        "Real-time Inventory Management", 
-        "Multi-vendor Marketplace",
+        "Tour Package Browsing & Booking",
+        "Hotel Reservation System", 
+        "Itinerary Planning Tools",
         "Secure Payment Gateway Integration",
-        "AI-powered Recommendations",
-        "Mobile-first Responsive Design",
-        "Admin Dashboard & Analytics",
-        "Order Tracking & Management"
+        "Customer Dashboard",
+        "Mobile-Responsive Design",
+        "Admin Panel for Package Management",
+        "Booking Confirmation & Notifications"
       ],
       challenges: [
-        "Handling high traffic loads during peak sales",
-        "Implementing complex multi-vendor payment splits",
-        "Creating seamless mobile shopping experience",
-        "Integrating multiple third-party services"
+        "Integrating multiple travel APIs for real-time data",
+        "Creating seamless booking flow for complex travel packages",
+        "Implementing secure payment processing for travel bookings",
+        "Managing dynamic pricing for seasonal packages"
       ],
       results: [
-        "300% increase in conversion rates",
-        "50% reduction in page load times",
-        "99.9% uptime during Black Friday sales",
-        "40% increase in mobile transactions"
+        "200% increase in online bookings",
+        "Reduced booking time by 60%",
+        "Improved customer satisfaction scores",
+        "Streamlined business operations"
       ]
     },
     2: {
-      title: "Mobile Banking App",
-      subtitle: "Secure Financial Management",
-      description: "A secure and user-friendly banking application with real-time transactions, biometric authentication, and comprehensive financial management tools.",
-      longDescription: "Developed a next-generation mobile banking application that prioritizes security without compromising user experience. The app features end-to-end encryption, biometric authentication, and real-time transaction processing with instant notifications.",
-      tech: ["React Native", "Firebase", "Redux", "Plaid API", "Biometric SDK"],
-      category: "Mobile App",
+      title: "Car Rental Website",
+      subtitle: "Modern Vehicle Rental Platform",
+      description: "A modern car rental platform with real-time availability, booking management, and secure payment processing for hassle-free vehicle rentals.",
+      longDescription: "Built a comprehensive car rental platform that simplifies the vehicle booking process for customers while providing powerful management tools for the rental business. The system includes real-time vehicle availability, automated booking confirmations, and integrated payment processing.",
+      tech: ["React", "Express.js", "MongoDB", "Razorpay", "Node.js", "JWT"],
+      category: "Web Development",
       gradient: "from-green-500 to-teal-600",
-      client: "SecureBank Corp",
-      duration: "8 months",
-      team: "6 developers",
+      client: "Car Rental Services",
+      duration: "2.5 months",
+      team: "3 developers",
       year: "2024",
       features: [
-        "Biometric Authentication (Face ID/Touch ID)",
-        "Real-time Transaction Processing",
-        "Budget Tracking & Analytics",
-        "Bill Payment & Scheduling",
-        "Card Management & Controls",
-        "Investment Portfolio Tracking",
-        "Secure Document Upload",
-        "24/7 Customer Support Chat"
+        "Real-time Vehicle Availability",
+        "Online Booking & Reservation System",
+        "Customer Profile Management",
+        "Secure Payment Processing",
+        "Booking History & Tracking",
+        "Vehicle Fleet Management",
+        "Automated Email Notifications",
+        "Mobile-Friendly Interface"
       ],
       challenges: [
-        "Implementing bank-grade security protocols",
-        "Ensuring compliance with financial regulations",
-        "Creating intuitive UX for complex banking features",
-        "Optimizing performance for real-time data"
+        "Managing real-time vehicle availability across multiple locations",
+        "Implementing dynamic pricing based on demand and season",
+        "Creating efficient booking management system",
+        "Ensuring secure payment processing for rentals"
       ],
       results: [
-        "4.8/5 app store rating",
-        "60% increase in mobile banking adoption",
-        "Zero security incidents since launch",
-        "35% reduction in customer support calls"
+        "150% increase in online reservations",
+        "Reduced manual booking errors by 90%",
+        "Improved fleet utilization by 40%",
+        "Enhanced customer experience ratings"
       ]
     },
     3: {
-      title: "Corporate Website",
-      subtitle: "Professional Business Presence",
-      description: "A professional business website with CMS integration, responsive design, and advanced SEO optimization for maximum online visibility.",
-      longDescription: "Created a comprehensive corporate website that serves as the digital headquarters for a Fortune 500 company. The site features dynamic content management, multi-language support, and advanced analytics integration.",
-      tech: ["Next.js", "Tailwind CSS", "Strapi CMS", "GraphQL", "Vercel"],
-      category: "Web Development", 
+      title: "Cosmetics E-Commerce",
+      subtitle: "Beautiful Online Beauty Store",
+      description: "A beautiful cosmetics online store with product catalog, shopping cart, user reviews, and integrated payment gateway for beauty enthusiasts.",
+      longDescription: "Created an elegant e-commerce platform specifically designed for cosmetics and beauty products. The website features a visually appealing product showcase, advanced filtering options, customer reviews system, and seamless checkout process tailored for the beauty industry.",
+      tech: ["React", "Node.js", "MongoDB", "PayPal", "Stripe", "Cloudinary"],
+      category: "E-Commerce", 
       gradient: "from-purple-500 to-pink-600",
-      client: "Global Enterprises Inc",
+      client: "Beauty & Cosmetics Store",
       duration: "4 months",
       team: "4 developers",
-      year: "2023",
+      year: "2024",
       features: [
-        "Headless CMS Integration",
-        "Multi-language Support",
-        "Advanced SEO Optimization",
-        "Interactive Contact Forms",
-        "Blog & News Management",
-        "Team Directory & Profiles",
-        "Document Library",
-        "Analytics & Reporting"
+        "Product Catalog with High-Quality Images",
+        "Advanced Search & Filter Options",
+        "Shopping Cart & Wishlist",
+        "Customer Reviews & Ratings",
+        "Secure Checkout Process",
+        "Order Tracking System",
+        "Beauty Tips Blog Section",
+        "Mobile-Optimized Shopping Experience"
       ],
       challenges: [
-        "Managing complex content hierarchies",
-        "Implementing multi-language SEO",
-        "Ensuring fast loading across all devices",
-        "Integrating with existing business systems"
+        "Creating visually appealing product displays for cosmetics",
+        "Implementing color-accurate product photography system",
+        "Building trust through customer reviews and ratings",
+        "Optimizing mobile shopping experience for beauty products"
       ],
       results: [
-        "200% increase in organic traffic",
-        "90+ Google PageSpeed score",
-        "50% increase in lead generation",
-        "25% reduction in bounce rate"
+        "300% increase in online sales",
+        "Improved conversion rate by 45%",
+        "Enhanced brand visibility and reach",
+        "Reduced cart abandonment by 35%"
       ]
     }
   };

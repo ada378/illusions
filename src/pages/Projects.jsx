@@ -8,55 +8,31 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "Modern online shopping experience with advanced features and seamless user interface",
-      tech: ["React", "Node.js", "MongoDB"],
+      title: "Siddhart Tour and Travel",
+      description: "Complete travel booking platform with tour packages, hotel reservations, and seamless payment integration for memorable travel experiences",
+      tech: ["React", "Node.js", "MongoDB", "Stripe"],
       category: "Web Development",
       gradient: "from-blue-500 to-purple-600"
     },
     {
       id: 2,
-      title: "Mobile Banking App",
-      description: "Secure and user-friendly banking application with real-time transactions",
-      tech: ["React Native", "Firebase", "Redux"],
-      category: "Mobile App",
+      title: "Car Rental Website",
+      description: "Modern car rental platform with real-time availability, booking management, and secure payment processing for hassle-free vehicle rentals",
+      tech: ["React", "Express.js", "MongoDB", "Razorpay"],
+      category: "Web Development",
       gradient: "from-green-500 to-teal-600"
     },
     {
       id: 3,
-      title: "Corporate Website",
-      description: "Professional business website with CMS integration and responsive design",
-      tech: ["Next.js", "Tailwind", "Strapi"],
-      category: "Web Development",
+      title: "Cosmetics E-Commerce",
+      description: "Beautiful cosmetics online store with product catalog, shopping cart, user reviews, and integrated payment gateway for beauty enthusiasts",
+      tech: ["React", "Node.js", "MongoDB", "PayPal"],
+      category: "E-Commerce",
       gradient: "from-purple-500 to-pink-600"
-    },
-    {
-      id: 4,
-      title: "AI Dashboard",
-      description: "Data visualization and analytics platform powered by machine learning",
-      tech: ["Vue.js", "Python", "TensorFlow"],
-      category: "AI/ML",
-      gradient: "from-orange-500 to-red-600"
-    },
-    {
-      id: 5,
-      title: "Social Media App",
-      description: "Interactive social platform with real-time features and engaging user experience",
-      tech: ["React", "Socket.io", "PostgreSQL"],
-      category: "Web Development",
-      gradient: "from-indigo-500 to-blue-600"
-    },
-    {
-      id: 6,
-      title: "IoT Monitoring System",
-      description: "Real-time device monitoring and control system for smart infrastructure",
-      tech: ["Angular", "MQTT", "InfluxDB"],
-      category: "IoT",
-      gradient: "from-teal-500 to-green-600"
     }
   ];
 
-  const filters = ['All Projects', 'Web Development', 'Mobile App', 'AI/ML', 'IoT'];
+  const filters = ['All Projects', 'Web Development', 'E-Commerce'];
 
   const filteredProjects = activeFilter === 'All Projects' 
     ? projects 
@@ -94,19 +70,19 @@ const Projects = () => {
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto mb-16">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">50+</div>
-                <p className="text-gray-600 font-medium text-sm">Web Apps</p>
+                <div className="text-3xl font-bold text-blue-600">3+</div>
+                <p className="text-gray-600 font-medium text-sm">Projects</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">25+</div>
-                <p className="text-gray-600 font-medium text-sm">Mobile Apps</p>
+                <div className="text-3xl font-bold text-blue-600">3+</div>
+                <p className="text-gray-600 font-medium text-sm">Happy Clients</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">15+</div>
-                <p className="text-gray-600 font-medium text-sm">AI Projects</p>
+                <div className="text-3xl font-bold text-blue-600">1+</div>
+                <p className="text-gray-600 font-medium text-sm">Years Experience</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">99%</div>
+                <div className="text-3xl font-bold text-blue-600">100%</div>
                 <p className="text-gray-600 font-medium text-sm">Success Rate</p>
               </div>
             </div>
